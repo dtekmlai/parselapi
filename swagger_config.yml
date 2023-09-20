@@ -1,0 +1,62 @@
+swagger: "2.0"
+info:
+  title: Parsel Sorgu API
+  description: Koordinat bilgisi ile mevcut parsele ait bilgi çekmeye yarayan API
+  version: "1.0"
+paths:
+  /parcel_data_by_coords:
+    get:
+      summary: Enlem ve Boylam bilgisi ile parsel bilgisi çekme.
+      parameters:
+        - name: latitude
+          in: query
+          type: number
+          required: true
+          description: Enlem
+        - name: longitude
+          in: query
+          type: number
+          required: true
+          description: Boylam
+      responses:
+        200:
+          description: Success
+
+  /parcel_data_by_location:
+    get:
+      summary: Konum bilgisine göre parsel bilgisi çekme
+      parameters:
+        - name: city
+          in: query
+          description: "Şehir Adı"
+          required: true
+          type: string
+        - name: district
+          in: query
+          description: "İlçe Adı"
+          type: string
+          required: true
+        - name: neighbourhood
+          in: query
+          description: "Mahalle Adı"
+          required: true
+          type: string
+        - name: block
+          in: query
+          description: "Ada No"
+          required: true
+          type: string
+        - name: parcel
+          in: query
+          description: "Parsel No"
+          required: true
+          type: string
+      responses:
+        200:
+          description: Success
+
+
+
+
+
+
